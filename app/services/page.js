@@ -40,6 +40,11 @@ export default function ServicesPage() {
                     <span className="eyebrow">{service.shortTitle}</span>
                     <h2>{service.title}</h2>
                     <p className="lead">{service.details}</p>
+                    <div className="conversion-strip">
+                      <div><strong>Fit</strong><span>Scoped to your stage</span></div>
+                      <div><strong>Cadence</strong><span>Clear monthly rhythm</span></div>
+                      <div><strong>Output</strong><span>Owner-ready insight</span></div>
+                    </div>
                     <Link href={service.href} className="btn btn--primary">
                       Explore {service.shortTitle} <ArrowRight size={18} />
                     </Link>

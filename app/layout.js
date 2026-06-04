@@ -1,6 +1,7 @@
 import './globals.css';
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
+import ScrollMotion from './components/ScrollMotion';
 
 export const metadata = {
   title: {
@@ -65,6 +66,7 @@ export default function RootLayout({ children }) {
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
         />
+        <ScrollMotion />
         <Navbar />
         <main>{children}</main>
         <Footer />

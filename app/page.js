@@ -1,4 +1,3 @@
-import Image from 'next/image';
 import Link from 'next/link';
 import { ArrowRight, CheckCircle2, Phone } from 'lucide-react';
 import { differentiators, painPoints, processSteps, resourceItems, services } from './data/site';
@@ -29,8 +28,10 @@ export default function HomePage() {
           </div>
 
           <div className="hero__panel hero__panel--home reveal">
-            <div className="hero__logo-mark">
-              <Image src="/images/logo.png" alt="Strata Cloud Accountants" width={720} height={307} priority />
+            <div className="dummy-image scroll-drift" data-label="Financial dashboard image placeholder">
+              <span className="dummy-image__shape" />
+              <span className="dummy-image__shape" />
+              <span className="dummy-image__shape" />
             </div>
             <div className="metric-row">
               <div className="metric">

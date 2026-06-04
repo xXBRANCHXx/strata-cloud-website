@@ -175,6 +175,13 @@ export const painPoints = [
     problem: 'Your books are late, inconsistent, or hard to trust.',
     symptoms: ['Unreconciled accounts', 'Confusing categories', 'Delayed month-end close', 'Financial reports no one uses'],
     consequences: 'Every decision gets slower because no one is confident the data reflects reality.',
+    outcome: 'A dependable monthly close, a cleaner chart of accounts, and reporting your leadership team can actually use.',
+    offer: 'A focused cleanup sprint followed by a monthly bookkeeping rhythm that keeps the work from sliding backward.',
+    proof: ['Cleanup roadmap within the first review', 'Close checklist built around your tools', 'Owner-ready financial summary every month'],
+    objections: [
+      ['Will this interrupt the business?', 'No. We work around your current tools and prioritize the accounts that affect decisions first.'],
+      ['What if the books are really behind?', 'That is exactly the use case. We separate urgent decision data from lower-risk historical cleanup.'],
+    ],
     caseStudy:
       'A service firm came in with six months of cleanup work and no reliable close rhythm. We rebuilt the chart of accounts, cleaned the ledger, and installed a monthly reporting cadence.',
     video: 'Short cleanup walkthrough: how to spot three signs your books are steering decisions in the wrong direction.',
@@ -186,6 +193,13 @@ export const painPoints = [
     problem: 'Profit looks fine on paper, but cash feels tight every payroll cycle.',
     symptoms: ['Surprise shortfalls', 'Payroll stress', 'No runway visibility', 'Owners unsure when to invest'],
     consequences: 'Growth becomes reactive because every opportunity competes with urgent cash pressure.',
+    outcome: 'A practical view of runway, payroll timing, receivables, and the choices that protect working capital.',
+    offer: 'A cash clarity model plus advisory cadence that helps you see pressure early and decide before the emergency.',
+    proof: ['13-week cash forecast structure', 'A/R and payment timing review', 'Decision rules for hiring, owner draws, and vendor timing'],
+    objections: [
+      ['We already have a P&L. Is that enough?', 'A P&L tells you what happened. Cash planning shows what is likely to happen next.'],
+      ['Can this work with uneven revenue?', 'Yes. Uneven revenue is where rolling forecasts and payment timing rules matter most.'],
+    ],
     caseStudy:
       'We built a rolling cash forecast for an owner who had revenue growth but recurring payroll anxiety, then added AR and payment-timing controls.',
     video: 'Short forecast walkthrough: what a 13-week cash view should show before a crunch happens.',
@@ -197,6 +211,13 @@ export const painPoints = [
     problem: 'Clients are slow to pay and collections depend on memory.',
     symptoms: ['A/R keeps climbing', 'Invoices go out late', 'Follow-up is inconsistent', 'Cash is stuck in unpaid work'],
     consequences: 'The company funds client delay instead of using cash for payroll, growth, and owner flexibility.',
+    outcome: 'Cleaner invoicing, clearer aging reports, and a follow-up rhythm that keeps receivables visible.',
+    offer: 'Receivables workflow design that aligns invoice timing, owner visibility, and professional client follow-up.',
+    proof: ['A/R aging dashboard review', 'Collection cadence and escalation rules', 'Invoice timing and payment-term recommendations'],
+    objections: [
+      ['Will collections damage client relationships?', 'The opposite is usually true. Clear expectations make payment less awkward and more professional.'],
+      ['Can this be automated?', 'Many reminders and owner alerts can be automated, while sensitive conversations stay human.'],
+    ],
     caseStudy:
       'We mapped invoice timing, aging reports, and client follow-up rules for a firm whose A/R was expanding faster than revenue.',
     video: 'Short workflow walkthrough: how a clean receivables cadence improves cash without damaging relationships.',
@@ -208,6 +229,13 @@ export const painPoints = [
     problem: 'You have reports, but no one turns them into strategic decisions.',
     symptoms: ['Gut-driven hiring', 'No KPI review', 'Pricing debates without data', 'Leadership lacks financial context'],
     consequences: 'The business keeps moving, but owners cannot see whether growth is actually creating value.',
+    outcome: 'A leadership-level financial rhythm that turns reports into priorities, tradeoffs, and confident next steps.',
+    offer: 'Fractional CFO advisory that gives you executive perspective without bringing on a full-time CFO.',
+    proof: ['Monthly advisory meeting structure', 'KPI dashboard and executive summary', 'Scenario support for pricing, hiring, and growth decisions'],
+    objections: [
+      ['Are we too small for CFO support?', 'If decisions are getting more expensive, CFO perspective can be useful before you are ready for a full-time hire.'],
+      ['Will this just mean more reports?', 'No. The point is interpretation, prioritization, and better decisions from the reports you already need.'],
+    ],
     caseStudy:
       'We added monthly advisory reviews and KPI dashboards for a founder who had clean books but no strategic finance partner.',
     video: 'Short advisory walkthrough: the difference between monthly reporting and CFO-level interpretation.',
@@ -219,6 +247,13 @@ export const painPoints = [
     problem: 'You are not sure whether your services are priced for healthy margins.',
     symptoms: ['Busy team, thin profit', 'Custom work underpriced', 'No service-line margin view', 'Rate increases feel risky'],
     consequences: 'Revenue grows while owner stress and delivery pressure grow with it.',
+    outcome: 'A clearer understanding of client profitability, service-line margins, and where pricing needs to change.',
+    offer: 'Pricing and margin analysis that helps you change rates, scope, or packages with more confidence.',
+    proof: ['Service-line margin review', 'Client profitability segmentation', 'Pricing scenario model for rate or scope changes'],
+    objections: [
+      ['Will this force us to raise every price?', 'Not necessarily. Sometimes scope, mix, delivery process, or client segmentation changes first.'],
+      ['What if clients push back?', 'We help you understand margin tradeoffs so you can decide where pushback is worth absorbing.'],
+    ],
     caseStudy:
       'We helped a service company compare client profitability, delivery cost, and pricing options before changing packages.',
     video: 'Short margin walkthrough: which numbers to review before changing price or scope.',
@@ -230,6 +265,13 @@ export const painPoints = [
     problem: 'Growth decisions are made without a clear view of what happens next.',
     symptoms: ['Hiring uncertainty', 'No scenario planning', 'Budget surprises', 'Expansion decisions feel speculative'],
     consequences: 'The owner carries too much risk because the business lacks a practical financial model.',
+    outcome: 'A clearer view of what each growth decision does to cash, capacity, margin, and owner flexibility.',
+    offer: 'Scenario modeling and forecasting support for hires, expansion, debt, software changes, or new service lines.',
+    proof: ['Base-case, upside, and downside models', 'Hiring and capacity assumptions', 'Decision dashboard for timing and tradeoffs'],
+    objections: [
+      ['Forecasts are always wrong, so why build one?', 'The value is not perfect prediction. It is seeing assumptions and tradeoffs before the decision is expensive.'],
+      ['Can this work without perfect data?', 'Yes. We start with useful assumptions and improve the model as reporting quality improves.'],
+    ],
     caseStudy:
       'We modeled hiring, utilization, cash, and margin scenarios before a client committed to a major expansion plan.',
     video: 'Short planning walkthrough: how scenario models reveal tradeoffs before cash is spent.',

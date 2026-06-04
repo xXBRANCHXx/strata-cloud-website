@@ -42,7 +42,12 @@ export default async function ServiceDetailPage({ params }) {
             </div>
           </div>
           <div className="hero__panel reveal">
-            <span className="icon"><Icon /></span>
+            <div className="dummy-image scroll-drift" data-label={`${service.shortTitle} image placeholder`}>
+              <span className="dummy-image__shape" />
+              <span className="dummy-image__shape" />
+              <span className="dummy-image__shape" />
+            </div>
+            <span className="icon" style={{ marginTop: 'var(--space-6)' }}><Icon /></span>
             <h2 style={{ marginTop: 'var(--space-5)' }}>{service.shortTitle} outcomes</h2>
             <p className="lead" style={{ marginTop: 'var(--space-4)' }}>{service.summary}</p>
           </div>
