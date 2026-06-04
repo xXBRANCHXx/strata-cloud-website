@@ -1,7 +1,35 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { ArrowRight, CheckCircle2, Phone, PlayCircle, ShieldCheck } from 'lucide-react';
 import { painPoints } from '../../data/site';
+
+const solutionImages = {
+  'messy-books': {
+    src: '/images/accounting-workspace.jpg',
+    alt: 'Financial reports, calculator, cash, and laptop arranged for bookkeeping cleanup',
+  },
+  'cash-flow-crunch': {
+    src: '/images/cash-flow-planning.jpg',
+    alt: 'Business owner reviewing cash flow, receipts, and laptop notes at a desk',
+  },
+  'late-receivables': {
+    src: '/images/business-owner-receipts.jpg',
+    alt: 'Owner reviewing invoices and receipts on a laptop',
+  },
+  'no-cfo-insight': {
+    src: '/images/financial-advisory-meeting.jpg',
+    alt: 'Advisory team discussing financial charts on a laptop',
+  },
+  'pricing-confusion': {
+    src: '/images/financial-advisory-meeting.jpg',
+    alt: 'Business leaders reviewing financial charts and margin analysis together',
+  },
+  'forecast-blind-spots': {
+    src: '/images/cash-flow-planning.jpg',
+    alt: 'Forecast planning workspace with laptop, receipts, and financial paperwork',
+  },
+};
 
 export function generateStaticParams() {
   return painPoints.map((item) => ({ slug: item.slug }));
@@ -21,6 +49,7 @@ export default async function PainPointPage({ params }) {
   const item = painPoints.find((point) => point.slug === slug);
   if (!item) notFound();
   const Icon = item.icon;
+  const solutionImage = solutionImages[item.slug] || solutionImages['no-cfo-insight'];
 
   return (
     <>
@@ -49,10 +78,17 @@ export default async function PainPointPage({ params }) {
 
       <section className="section">
         <div className="container split">
-          <div className="dummy-image scroll-drift reveal" data-label={`${item.title} dashboard placeholder`}>
-            <span className="dummy-image__shape" />
-            <span className="dummy-image__shape" />
-            <span className="dummy-image__shape" />
+          <div className="image-frame image-frame--feature scroll-drift reveal">
+            <Image
+              src={solutionImage.src}
+              alt={solutionImage.alt}
+              width={1600}
+              height={1068}
+            />
+            <div className="image-caption image-caption--light">
+              <strong>{item.title}</strong>
+              <span>{item.problem}</span>
+            </div>
           </div>
           <div className="stack reveal">
             <span className="eyebrow">What is really happening</span>
@@ -107,10 +143,14 @@ export default async function PainPointPage({ params }) {
             <span className="eyebrow">Short video module</span>
             <h2>What we would walk through.</h2>
             <p>{item.video}</p>
-            <div className="dummy-image" data-label="Video thumbnail placeholder" style={{ minHeight: '220px', marginTop: 'var(--space-4)' }}>
-              <span className="dummy-image__shape" />
-              <span className="dummy-image__shape" />
-              <span className="dummy-image__shape" />
+            <div className="image-frame image-frame--thumb" style={{ marginTop: 'var(--space-4)' }}>
+              <Image
+                src="/images/financial-advisory-meeting.jpg"
+                alt="Financial advisor walking through a dashboard with a client"
+                width={1600}
+                height={1068}
+              />
+              <span className="play-chip"><PlayCircle size={28} /> Watch module</span>
             </div>
           </article>
         </div>

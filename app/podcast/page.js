@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowRight, Headphones, Music2, PlayCircle, Radio, Video } from 'lucide-react';
 import { podcastEpisodes } from '../data/site';
 
@@ -57,9 +58,14 @@ export default function PodcastPage() {
                   Key takeaways, show notes, transcript-ready summaries, and a clear
                   advisory CTA for owners who want to apply the episode to their business.
                 </p>
-                <div className="panel" style={{ padding: 'var(--space-4)' }}>
-                  <Radio size={20} color="var(--purple-700)" />
-                  <p style={{ marginTop: 'var(--space-3)' }}>Embedded player placeholder for the published episode.</p>
+                <div className="image-frame image-frame--thumb">
+                  <Image
+                    src={index % 2 === 0 ? '/images/financial-advisory-meeting.jpg' : '/images/accounting-workspace.jpg'}
+                    alt={`${title} podcast episode artwork`}
+                    width={1600}
+                    height={1068}
+                  />
+                  <span className="play-chip"><Radio size={22} /> Episode preview</span>
                 </div>
                 <Link href="/contact" className="link-arrow">
                   Book a Clarity Call <ArrowRight size={17} />
