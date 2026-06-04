@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { ArrowRight, CheckCircle2, Phone } from 'lucide-react';
 import { differentiators, painPoints, processSteps, resourceItems, services } from './data/site';
 
@@ -28,10 +29,18 @@ export default function HomePage() {
           </div>
 
           <div className="hero__panel hero__panel--home reveal">
-            <div className="dummy-image scroll-drift" data-label="Financial dashboard image placeholder">
-              <span className="dummy-image__shape" />
-              <span className="dummy-image__shape" />
-              <span className="dummy-image__shape" />
+            <div className="image-frame image-frame--hero scroll-drift">
+              <Image
+                src="/images/financial-advisory-meeting.jpg"
+                alt="Financial advisors reviewing analytics on a laptop during a strategy meeting"
+                width={1600}
+                height={1068}
+                priority
+              />
+              <div className="image-caption">
+                <strong>Decision support</strong>
+                <span>Clean reporting, sharper advisory rhythm.</span>
+              </div>
             </div>
             <div className="metric-row">
               <div className="metric">

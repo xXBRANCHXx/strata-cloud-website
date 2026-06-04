@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import Image from 'next/image';
 import { notFound } from 'next/navigation';
 import { ArrowRight, CheckCircle2, Phone } from 'lucide-react';
 import { services } from '../../data/site';
@@ -7,6 +8,21 @@ const slugMap = {
   bookkeeping: 'bookkeeping',
   controller: 'controller',
   cfo: 'fractional-cfo',
+};
+
+const serviceImages = {
+  bookkeeping: {
+    src: '/images/accounting-workspace.jpg',
+    alt: 'Accountant working through financial reports with a laptop, calculator, and documents',
+  },
+  controller: {
+    src: '/images/financial-advisory-meeting.jpg',
+    alt: 'Finance team reviewing reporting dashboards together in a meeting',
+  },
+  'fractional-cfo': {
+    src: '/images/cash-flow-planning.jpg',
+    alt: 'Business owner planning cash flow with receipts, laptop, and financial notes',
+  },
 };
 
 export function generateStaticParams() {
@@ -27,6 +43,7 @@ export default async function ServiceDetailPage({ params }) {
   const service = services.find((item) => item.id === slugMap[slug]);
   if (!service) notFound();
   const Icon = service.icon;
+  const serviceImage = serviceImages[service.id] || serviceImages['fractional-cfo'];
 
   return (
     <>
@@ -42,10 +59,13 @@ export default async function ServiceDetailPage({ params }) {
             </div>
           </div>
           <div className="hero__panel reveal">
-            <div className="dummy-image scroll-drift" data-label={`${service.shortTitle} image placeholder`}>
-              <span className="dummy-image__shape" />
-              <span className="dummy-image__shape" />
-              <span className="dummy-image__shape" />
+            <div className="image-frame image-frame--service scroll-drift">
+              <Image
+                src={serviceImage.src}
+                alt={serviceImage.alt}
+                width={1600}
+                height={1068}
+              />
             </div>
             <span className="icon" style={{ marginTop: 'var(--space-6)' }}><Icon /></span>
             <h2 style={{ marginTop: 'var(--space-5)' }}>{service.shortTitle} outcomes</h2>
