@@ -38,9 +38,33 @@ export const metadata = {
 };
 
 export default function RootLayout({ children }) {
+  const organizationSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'AccountingService',
+    name: 'Strata Cloud Accountants',
+    url: 'https://stratacloudaccountants.com',
+    telephone: '(630) 274-6057',
+    email: 'info@stratacloudaccountants.com',
+    address: {
+      '@type': 'PostalAddress',
+      streetAddress: '6001 W Parmer Lane, STE 370 Box 1016',
+      addressLocality: 'Austin',
+      addressRegion: 'TX',
+      postalCode: '78727',
+      addressCountry: 'US',
+    },
+    slogan: 'Financial Clarity. Human Connection.',
+    areaServed: 'United States',
+    serviceType: ['Bookkeeping Services', 'Controller Services', 'Fractional CFO Services'],
+  };
+
   return (
     <html lang="en">
       <body>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+        />
         <Navbar />
         <main>{children}</main>
         <Footer />

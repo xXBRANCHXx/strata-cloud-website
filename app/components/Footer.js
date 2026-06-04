@@ -1,88 +1,84 @@
-import Link from 'next/link';
 import Image from 'next/image';
+import Link from 'next/link';
+import { Camera, Mail, MapPin, Phone, PlayCircle, Share2 } from 'lucide-react';
+import { company, painPoints, services } from '../data/site';
 
 export default function Footer() {
   return (
-    <footer className="footer" id="site-footer">
-      <div className="container container--wide">
+    <footer className="footer">
+      <div className="container-wide">
         <div className="footer__grid">
-          {/* Brand Column */}
           <div className="footer__brand">
-            <Image
-              src="/images/logo.png"
-              alt="Strata Cloud Accountants"
-              width={180}
-              height={45}
-              style={{ height: '50px', width: 'auto', filter: 'brightness(1.5)' }}
-            />
-            <p className="footer__tagline">
-              Financial Clarity. Human Connection. Empowering service-based businesses
-              with fractional accounting and advisory services they can trust.
+            <Image src="/images/logo.png" alt="Strata Cloud Accountants" width={190} height={81} />
+            <h3>{company.tagline}</h3>
+            <p>
+              Fractional accounting and advisory for service-based businesses ready to
+              move from messy books and gut decisions to confident, data-driven growth.
             </p>
             <div className="footer__social">
-              <a href="https://www.linkedin.com/company/stratacloudaccountants" className="footer__social-link" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer">
-                in
+              <a href={company.linkedin} aria-label="LinkedIn" target="_blank" rel="noreferrer">
+                <Share2 size={18} />
               </a>
-              <a href="https://www.facebook.com/stratacloudaccountants" className="footer__social-link" aria-label="Facebook" target="_blank" rel="noopener noreferrer">
-                f
+              <a href={company.facebook} aria-label="Facebook" target="_blank" rel="noreferrer">
+                <Share2 size={18} />
               </a>
-              <a href="https://www.instagram.com/stratacloudaccountants" className="footer__social-link" aria-label="Instagram" target="_blank" rel="noopener noreferrer">
-                IG
+              <a href={company.instagram} aria-label="Instagram" target="_blank" rel="noreferrer">
+                <Camera size={18} />
               </a>
-              <a href="https://www.youtube.com/@stratacloudaccountants" className="footer__social-link" aria-label="YouTube" target="_blank" rel="noopener noreferrer">
-                ▶
+              <a href={company.youtube} aria-label="YouTube" target="_blank" rel="noreferrer">
+                <PlayCircle size={18} />
               </a>
             </div>
           </div>
 
-          {/* Quick Links */}
           <div>
-            <h4 className="footer__heading">Company</h4>
+            <h4>Company</h4>
             <ul className="footer__links">
-              <li><Link href="/about" className="footer__link">About Us</Link></li>
-              <li><Link href="/services" className="footer__link">Services</Link></li>
-              <li><Link href="/careers" className="footer__link">Careers</Link></li>
-              <li><Link href="/podcast" className="footer__link">Podcast</Link></li>
-              <li><Link href="/resources" className="footer__link">Resources</Link></li>
+              <li><Link href="/about">About Us</Link></li>
+              <li><Link href="/careers">Careers</Link></li>
+              <li><Link href="/industries-served">Industries Served</Link></li>
+              <li><Link href="/podcast">Podcast</Link></li>
+              <li><Link href="/resources">Resources</Link></li>
+              <li><Link href="/faq">FAQ</Link></li>
+              <li><Link href="/video">Videos</Link></li>
             </ul>
           </div>
 
-          {/* Services */}
           <div>
-            <h4 className="footer__heading">Services</h4>
+            <h4>Services</h4>
             <ul className="footer__links">
-              <li><Link href="/services#fractional-cfo" className="footer__link">Fractional CFO</Link></li>
-              <li><Link href="/services#accounting" className="footer__link">Accounting</Link></li>
-              <li><Link href="/services#bookkeeping" className="footer__link">Bookkeeping</Link></li>
-              <li><Link href="/services#advisory" className="footer__link">Advisory</Link></li>
-              <li><Link href="/services#controller" className="footer__link">Controller Services</Link></li>
+              {services.slice(0, 3).map((service) => (
+                <li key={service.id}>
+                  <Link href={service.href}>{service.title}</Link>
+                </li>
+              ))}
+              {painPoints.slice(0, 3).map((item) => (
+                <li key={item.slug}>
+                  <Link href={`/solutions/${item.slug}`}>{item.title}</Link>
+                </li>
+              ))}
             </ul>
           </div>
 
-          {/* Contact */}
           <div>
-            <h4 className="footer__heading">Contact</h4>
-            <div className="footer__contact-item">
-              <span className="footer__contact-icon">📍</span>
-              <span>6001 W Parmer Lane, STE 370 Box 1016,<br />Austin, Texas 78727</span>
-            </div>
-            <div className="footer__contact-item">
-              <span className="footer__contact-icon">📞</span>
-              <a href="tel:6302746057" className="footer__link">(630) 274-6057</a>
-            </div>
-            <div className="footer__contact-item">
-              <span className="footer__contact-icon">✉️</span>
-              <a href="mailto:info@stratacloudaccountants.com" className="footer__link">info@stratacloudaccountants.com</a>
-            </div>
+            <h4>Contact</h4>
+            <ul className="footer__links">
+              <li>
+                <a href={company.phoneHref}><Phone size={16} /> {company.phone}</a>
+              </li>
+              <li>
+                <a href={company.emailHref}><Mail size={16} /> {company.email}</a>
+              </li>
+              <li>
+                <span><MapPin size={16} /> {company.address}</span>
+              </li>
+            </ul>
           </div>
         </div>
 
         <div className="footer__bottom">
-          <p>&copy; {new Date().getFullYear()} Strata Cloud Accountants. All rights reserved.</p>
-          <p>
-            <Link href="/privacy" className="footer__link" style={{ marginRight: '1rem' }}>Privacy Policy</Link>
-            <Link href="/terms" className="footer__link">Terms of Service</Link>
-          </p>
+          <span>© {new Date().getFullYear()} Strata Cloud Accountants. All rights reserved.</span>
+          <span>We simplify the complicated.</span>
         </div>
       </div>
     </footer>
